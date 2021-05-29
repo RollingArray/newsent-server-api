@@ -14,7 +14,7 @@ return function (App $app) {
 	$app->post('/users', \App\Action\UserCreateAction::class);
 	$app->get('/feed', \App\Action\FeedCreateAction::class);
 	$app->post('/user-paginated-feeds', \App\Action\FeedReadAction::class);
-	$app->post('/generate/sentiment-over-time', \App\Action\SentimentOverTimeCreateAction::class);
+	$app->get('/generate/sentiment-over-time', \App\Action\SentimentOverTimeCreateAction::class);
 	$app->get('/sentiments-over-time/sentiments/{date}', \App\Action\SentimentOverTimeReadAction::class);
 
 	// Allow preflight requests for /user-paginated-feeds
