@@ -76,7 +76,6 @@ final class FeedCreator
             ));
 
             $feedsWithTones = $this->compareAndBuildSentimentForFeed($originalFeeds, $utterancesTone->utterances_tone);
-            echo json_encode($feedsWithTones);
 
             $this->insertEachFeed($feedsWithTones);
         }

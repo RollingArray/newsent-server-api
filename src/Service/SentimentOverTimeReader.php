@@ -72,9 +72,9 @@ final class SentimentOverTimeReader
         $rows = $this->sentimentOverTimeReaderRepository->spGetSotForDate($data);
         $scoreSeries = [];
         $timeStopGapSeries = $this->toneLibrary->timeStopGapSeries();
-        foreach ($rows as $eachData) {
-            foreach ($timeStopGapSeries as $eachTimeStopGap) {
-                if($eachData['time'] === $eachTimeStopGap['key']){
+        foreach ($timeStopGapSeries as $eachTimeStopGap) {
+            foreach ($rows as $eachData) {
+                if($eachTimeStopGap['key'] === $eachData['time']){
                     $scoreSeries[] = $eachData['tone'];
                 }
             }

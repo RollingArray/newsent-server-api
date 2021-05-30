@@ -37,8 +37,7 @@ final class SentimentOverTimeCreatorRepository
      */
     public function spInsertNewSot($data)
     {
-		var_dump($data);
-        $query = "CALL sp_insert_new_sot(?,?,?)";
+		$query = "CALL sp_insert_new_sot(?,?,?)";
 
         return $this->dbLibrary->executeStatement($query, $data);
     }
